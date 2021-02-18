@@ -74,7 +74,7 @@ global.texfilter=0
 global.language=LANG.CHS
 global.effect_enemy_boom=0
 global.joy_button_style=0
-global.joy_button_style=0
+global.pix_filter=0
 //初始化记录存入
 global.option_init_ary[4]=[
 	"fps_display", "texfilter", "language", "effect_enemy_boom", "joy_button_style"
@@ -153,6 +153,7 @@ global.texfilter =		ini_read_real("display", "texfilter",		global.texfilter)
 global.language =		ini_read_real("display", "language",		global.language)
 global.effect_enemy_boom =	ini_read_real("display", "effect_enemy_boom",	global.effect_enemy_boom)
 global.joy_button_style =	ini_read_real("display", "joy_button_style",	global.joy_button_style)
+global.pix_filter =	ini_read_real("display", "pix_filter",	global.pix_filter)
 #endregion
 #region 音量读取
 global.volume_se =	ini_read_real("volume", "se",	global.volume_se)

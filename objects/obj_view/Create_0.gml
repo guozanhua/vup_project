@@ -11,15 +11,15 @@ view={
 	hport : 288,
 }
 ui={
-	width : 1920,
-	height : 1080,
+	width : 2048,
+	height : 1152,
 	xport : 0,
 	yport : 0,
 	ports : [
 		{w:512, h:288},
-		{w:1280, h:720},
-		{w:1600, h:900},
-		{w:1920, h:1080}
+		{w:1024, h:576},
+		{w:1536, h:864},
+		{w:1920, h:1080},
 	],
 }
 view_visible[0]=true

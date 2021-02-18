@@ -11,6 +11,21 @@ if surface_exists(view0_surface_temp) {
 	surface_set_target(application_surface)
 	draw_surface_ext(view0_surface_temp, 0, 0, xsc, ysc, 0, c_white, 1)
 	surface_reset_target()
+	//滤镜划线
+	var pixFilter = global.pix_filter
+	pixFilter=true
+	if pixFilter{
+		draw_set_color(c_black)
+		draw_set_alpha(0.5)
+		for(var i=0;i<apsw;i+=xsc) {
+			draw_line(i, 0, i, apsh)
+		}
+		for(var i=0;i<apsh;i+=ysc) {
+			draw_line(0, i, apsw, i)
+		}
+		draw_set_color(c_white)
+		draw_set_alpha(1)
+	}
 }
 #endregion
 #region 界面内容
