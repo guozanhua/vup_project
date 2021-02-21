@@ -1,7 +1,7 @@
 #region 初始化配置，可重复
 #region 区别配置项
 	hspd=1;
-	vspd=8;
+	vspd=9;
 	lspd=3; //爬梯子速度
 	cspd=2.5;
 	walkspd=3;
@@ -91,6 +91,17 @@
 		SS_swiming=asset_get_index(string_replace("spr_player_@_swiming","@",modelname))
 		SS_injure3=asset_get_index(string_replace("spr_player_@_injure3","@",modelname))
 		SS_lwalk=asset_get_index(string_replace("spr_player_@_lwalk","@",modelname))
+	#endregion
+	#region 枪击动作
+		SS_idle_shoot=asset_get_index(string_replace("spr_player_@_idle_shoot","@",modelname))
+		SS_idle_shoot2=asset_get_index(string_replace("spr_player_@_idle_shoot2","@",modelname))
+		SS_walk_shoot=asset_get_index(string_replace("spr_player_@_walk_shoot","@",modelname))
+		SS_walk_shoot1=asset_get_index(string_replace("spr_player_@_walk_shoot1","@",modelname))
+		SS_walk_shoot2=asset_get_index(string_replace("spr_player_@_walk_shoot2","@",modelname))
+		SS_dash_shoot=asset_get_index(string_replace("spr_player_@_dash_shoot","@",modelname))
+		SS_fall_shoot=asset_get_index(string_replace("spr_player_@_fall_shoot","@",modelname))
+		SS_craw_shoot=asset_get_index(string_replace("spr_player_@_craw_shoot","@",modelname))
+		//SS_lad_shoot=asset_get_index(string_replace("spr_player_@_lad_shoot","@",modelname))
 	#endregion
 	#region
 	#endregion

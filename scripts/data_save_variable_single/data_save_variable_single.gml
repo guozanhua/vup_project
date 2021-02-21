@@ -17,6 +17,7 @@ function data_save_variable_single(){
 	global.player_mp=32
 	global.player_mp_up=32
 	global.player_mp_ex=0	//一次性扩展能量
+	global.player_support=0 //羁绊值
 	global.player_life=2
 	global.player_ec=0
 	/////////////////////////

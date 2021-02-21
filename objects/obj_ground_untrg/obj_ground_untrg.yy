@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_ground_untrg",
+    "path": "sprites/spr_ground_untrg/spr_ground_untrg.yy",
+  },
   "solid": false,
   "visible": false,
   "spriteMaskId": null,

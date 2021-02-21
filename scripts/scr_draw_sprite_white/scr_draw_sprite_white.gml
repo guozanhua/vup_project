@@ -30,3 +30,8 @@ function scr_draw_sprite_white(spr,inx,xx,yy,xscale,yscale,rot,color,alpha) {
 	gpu_set_blendmode(bm_normal)
 	draw_set_alpha(1)
 }
+/// @desc 除了精灵外完全相同
+/// @arg sprite
+function scr_draw_only_sprite(spr){
+	draw_sprite_ext(spr, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+}

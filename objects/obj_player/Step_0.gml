@@ -290,7 +290,7 @@ for(var i=1;i<=2;i+=1){
 				while(place_meeting(x,y,obj_ground)) y-=image_yscale;
 				scr_sprite_change(SS_jumped,0,0.25);
 				if(walk==8 || walk==2)
-					scr_player_mh_outground();
+					scr_player_outground();
 				jump=2;
 				walk=0;
 				if(ice==0) {

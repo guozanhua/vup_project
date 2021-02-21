@@ -12,6 +12,13 @@ function scr_enmus(){
 		pushup = 6,
 		pushdown = 7,
 	}
+	//攻击方式
+	enum ATK_TYPE{
+		bullet = 0,
+		cut = 1,
+		push = 2,
+		through = 3
+	}
 	//语言
 	enum LANG{
 		CHS = 0,//简体中文

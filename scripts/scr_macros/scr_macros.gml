@@ -28,4 +28,13 @@ function scr_macro(){
 	#macro gp_zr gp_shoulderrb
 	#macro axis_min 0.5 //摇杆有用的最小幅度（0-1）
 #endregion
+#region 文本颜色
+#macro TXT_KEY "[$=ff8800]"
+#macro TXT_W "[$=ffffff]"
+#macro TXT_ERR "[$=ff0000]"
+#macro TXT_COL_PERFIX "[$="
+#macro TXT_COL_SURFIX "]"
+#macro TXT_ICON_PERFIX "[@="
+#macro TXT_ICON_SURFIX "]"
+#endregion
 }

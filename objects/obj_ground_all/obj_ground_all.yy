@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_ground",
-    "path": "sprites/spr_ground/spr_ground.yy",
+    "name": "spr_ground_all",
+    "path": "sprites/spr_ground_all/spr_ground_all.yy",
   },
   "solid": false,
   "visible": false,
