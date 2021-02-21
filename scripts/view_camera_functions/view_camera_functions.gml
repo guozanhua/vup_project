@@ -34,11 +34,11 @@ function view_addy(addy) {
 /// @arg view
 /// @arg x
 function view_setx(setx) {
-	obj_view.x=setx
+	obj_view.x=setx+view_wpos(0)/2
 }
 /// @desc 相机y坐标设置
 /// @arg view
 /// @arg y
 function view_sety(sety) {
-	obj_view.y=sety
+	obj_view.y=sety+view_hpos(0)/2
 }

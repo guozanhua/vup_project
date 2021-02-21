@@ -80,8 +80,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"67f079a6-f566-4fcd-97cc-a735fc8599ff","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "human",
-    "path": "folders/Sprites/player/human.yy",
+    "name": "action",
+    "path": "folders/Sprites/player/human/action.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_player_hu_jumping",

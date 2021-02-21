@@ -2,6 +2,7 @@ randomize()
 
 global.player_operate=1
 global.operate=1
+global.player_support=35
 
 global.left_key =	ord("A")
 global.right_key =	ord("D")
