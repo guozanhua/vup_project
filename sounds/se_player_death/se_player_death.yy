@@ -10,8 +10,8 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "se_player_death",
-  "duration": 0.0,
+  "soundFile": "se_player_death.wav",
+  "duration": 2.312143,
   "parent": {
     "name": "player",
     "path": "folders/Sounds/player.yy",

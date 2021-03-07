@@ -10,8 +10,8 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "se_player_underwater",
-  "duration": 0.0,
+  "soundFile": "se_player_underwater.wav",
+  "duration": 2.040578,
   "parent": {
     "name": "player",
     "path": "folders/Sounds/player.yy",

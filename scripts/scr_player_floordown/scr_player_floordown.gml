@@ -18,7 +18,7 @@ function scr_player_floordown_set(flordown) {
 		for(var i=0;i<listcount;i++) {
 			ds_list_clear(listtmp)
 			with list[| i] {
-				var listtmpcnt = collision_rectangle_list(bbox_right+1, bbox_bottom+1, bbox_left-1, bbox_top-1, obj_floor, true, true, listtmp, false)
+				var listtmpcnt = collision_rectangle_list(bbox_right+1, bbox_bottom+GROUND_DRAWY+1, bbox_left-1, bbox_top-1, obj_floor, true, true, listtmp, false)
 				for(var j=0;j<listtmpcnt;j++) {
 					if instance_exists(listtmp[| j]) && !ds_list_exists(list, listtmp[| j])
 						ds_list_add(list, listtmp[| j])

@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "se_player_hu_bullet01.wav",
-  "duration": 0.414615,
+  "duration": 0.423639,
   "parent": {
     "name": "hu",
     "path": "folders/Sounds/player/hu.yy",

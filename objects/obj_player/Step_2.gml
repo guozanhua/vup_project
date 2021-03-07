@@ -6,19 +6,20 @@ if(scr_menu_trem()) {
 	scr_sprite_imspd(SS_idle,0.025,2,3);
 	scr_sprite_imspd(SS_idle,0.1,3,6);
 	//////////////////////////////////////
-	scr_sprite_imspd(SS_idle2,1/60,0,1);
+	//scr_sprite_imspd(SS_idle2,1/60,0,1);
+	scr_sprite_imspd(SS_idle2,0.1,0,1);
 	scr_sprite_imspd(SS_idle2,0.1,1,7);
 	//////////////////////////////////////
 	scr_sprite_imspd(SS_injure_fall,0,0.2);
 	//////////////////////////////////////
-	scr_sprite_imspd(SS_injure1,0.25,0,1);
+	scr_sprite_imspd(SS_injure1,0.5,0,1);
 	scr_sprite_imspd(SS_injure1,0.05,1,2);
 	//////////////////////////////////////
-	scr_sprite_imspd(SS_injure2,0.25,0,1);
+	scr_sprite_imspd(SS_injure2,0.5,0,1);
 	scr_sprite_imspd(SS_injure2,0.05,1,2);
 	//////////////////////////////////////
 	if(variable_instance_exists(id,"SS_injure3")) {
-		scr_sprite_imspd(SS_injure3,0.25,0,1);
+		scr_sprite_imspd(SS_injure3,0.5,0,1);
 		scr_sprite_imspd(SS_injure3,0.05,1,2);
 	}
 	#endregion
@@ -52,13 +53,15 @@ if(scr_menu_trem()) {
 		scr_sound_play(se_player_charge);
 	#endregion
 	#region 飞行物
-	if(global.player_hp>0) scr_player_flyobj_move();
+	if(global.player_hp>0) 
+		scr_player_flyobj_move();
 	#endregion
 	#region 死亡
 	if(global.player_hp<=0 
 	&& global.operate==1) {
 		scr_sprite_change(SS_death,0,1);
 		global.operate=0;
+		global.player_hp=0;
 		walk=0;
 		jump=0;
 		dash=0;
@@ -72,7 +75,9 @@ if(scr_menu_trem()) {
 			charge_index[i]=0;
 			charge_break[i]=0;
 		}
-		scr_sound_stop(SE_injure);
+		scr_sound_stop(SE_injure1);
+		scr_sound_stop(SE_injure2);
+		scr_sound_play(SE_death);
 		//清空半透板记录
 		scr_player_floordown_clear();
 	}
@@ -314,8 +319,14 @@ global.player_def=1;
 		}
 		//普通受伤
 		else{
-			if(uninjure==1) scr_sprite_change(SS_injure1,1,0.25);
-			else if(uninjure==-1) scr_sprite_change(SS_injure2,1,0.25);
+			if(uninjure==1) {
+				scr_sprite_change(SS_injure1,1,0.25);
+				scr_sound_play(SE_injure1);
+			}
+			else if(uninjure==-1) {
+				scr_sprite_change(SS_injure2,1,0.25);
+				scr_sound_play(SE_injure2);
+			}
 			if(jump==9) scr_player_outground();
 			if(injure_element!=ELEMENTS.absorb) {//吸附
 				hsp=2*hspd*(-uninjure);
@@ -338,7 +349,6 @@ global.player_def=1;
 		//if(injure_element==ELEMENTS.fire
 		//|| injure_element==ELEMENTS.elec)
 		//	injure_element=ELEMENTS.none;
-		scr_sound_play(SE_injure);
 		//夹缝中
 		if(ww==8 
 		&& global.model==PLAYER_MODEL.HU

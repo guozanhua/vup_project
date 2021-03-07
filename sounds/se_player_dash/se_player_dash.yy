@@ -10,8 +10,8 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "se_player_dash",
-  "duration": 0.0,
+  "soundFile": "se_player_dash.wav",
+  "duration": 2.214375,
   "parent": {
     "name": "player",
     "path": "folders/Sounds/player.yy",

@@ -9,7 +9,7 @@
   "swfPrecision": 2.525,
   "bbox_left": 20,
   "bbox_right": 43,
-  "bbox_top": 18,
+  "bbox_top": 17,
   "bbox_bottom": 79,
   "HTile": false,
   "VTile": false,
@@ -24,9 +24,6 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"57bc4071-fab5-480f-8e1c-e94512fd2b0b","path":"sprites/spr_player_hu_injure2/spr_player_hu_injure2.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"57bc4071-fab5-480f-8e1c-e94512fd2b0b","path":"sprites/spr_player_hu_injure2/spr_player_hu_injure2.yy",},"LayerId":{"name":"67f079a6-f566-4fcd-97cc-a735fc8599ff","path":"sprites/spr_player_hu_injure2/spr_player_hu_injure2.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_player_hu_injure2","path":"sprites/spr_player_hu_injure2/spr_player_hu_injure2.yy",},"resourceVersion":"1.0","name":"57bc4071-fab5-480f-8e1c-e94512fd2b0b","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"ad3da4df-dce2-4d96-a40d-009fd9949507","path":"sprites/spr_player_hu_injure2/spr_player_hu_injure2.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"ad3da4df-dce2-4d96-a40d-009fd9949507","path":"sprites/spr_player_hu_injure2/spr_player_hu_injure2.yy",},"LayerId":{"name":"67f079a6-f566-4fcd-97cc-a735fc8599ff","path":"sprites/spr_player_hu_injure2/spr_player_hu_injure2.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_player_hu_injure2","path":"sprites/spr_player_hu_injure2/spr_player_hu_injure2.yy",},"resourceVersion":"1.0","name":"ad3da4df-dce2-4d96-a40d-009fd9949507","tags":[],"resourceType":"GMSpriteFrame",},
@@ -42,14 +39,13 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 3.0,
+    "length": 2.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"16c4c7e4-04b2-40bd-b67e-af32df048f22","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"57bc4071-fab5-480f-8e1c-e94512fd2b0b","path":"sprites/spr_player_hu_injure2/spr_player_hu_injure2.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"10b1c375-be24-4302-a2a4-003fab8d6969","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ad3da4df-dce2-4d96-a40d-009fd9949507","path":"sprites/spr_player_hu_injure2/spr_player_hu_injure2.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"4060143b-ff8e-43d0-a9ef-066836dcd02d","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4404c6c0-35fa-4116-b2ff-2db557f53c47","path":"sprites/spr_player_hu_injure2/spr_player_hu_injure2.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"10b1c375-be24-4302-a2a4-003fab8d6969","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ad3da4df-dce2-4d96-a40d-009fd9949507","path":"sprites/spr_player_hu_injure2/spr_player_hu_injure2.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"4060143b-ff8e-43d0-a9ef-066836dcd02d","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4404c6c0-35fa-4116-b2ff-2db557f53c47","path":"sprites/spr_player_hu_injure2/spr_player_hu_injure2.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,

@@ -3,7 +3,7 @@ if sprite_index==SS_walk{
 	scr_sprite_change(-2,2,-2);
 }
 else if sprite_index==SS_dash{
-	scr_sprite_change(-2,2,-2);
+	scr_sprite_change(-2,5,-2);
 }
 else if sprite_index==SS_dashed{
 	scr_sprite_change(SS_idle,0,0.25);
@@ -21,7 +21,7 @@ else if sprite_index==SS_craw{
 	scr_sprite_change(SS_crawing,0,0.25);
 }
 else if sprite_index==SS_crawjump{
-	scr_sprite_change(-2,2,-2);
+	scr_sprite_change(-2,1,-2);
 }
 else if sprite_index==SS_talk{
 	scr_sprite_change(SS_talking,0,0.25);

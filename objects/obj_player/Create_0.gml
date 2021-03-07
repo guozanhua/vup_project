@@ -6,10 +6,10 @@
 	cspd=2.5;
 	walkspd=3;
 	dashspd=6;
-	G_noliq=0.5; //非水下重力
-	G_liq=0.25; //水下重力
+	G_noliq=GRAV; //非水下重力
+	G_liq=GRAV/2; //水下重力
 	G=G_noliq;
-	vspmaxrate=28;
+	vspmaxrate=20; //下落最大速度是G的多少倍
 	A_up=0;
 	H=1;
 	V=1;
@@ -20,6 +20,7 @@
 	ice_free=0; //不打滑
 	water_free=0; //水下速度自由
 	lightrad=96; //黑暗中光圈直径
+	bbox_ground_yup=0; //检测墙壁时冲刺特殊情况用
 	
 	enemylist=ds_list_create()
 	bulletlist=ds_list_create()
@@ -30,8 +31,8 @@
 #region 精灵
 	var modelname
 	if object_index==obj_player_hu modelname="hu"
-	/*else if object_index==obj_player_mz modelname="z"
-	else if object_index==obj_player_xz modelname="x"
+	else if object_index==obj_player_armor modelname="armor"
+	/*else if object_index==obj_player_xz modelname="x"
 	else if object_index==obj_player_hz modelname="h"
 	else if object_index==obj_player_lz modelname="l"
 	else if object_index==obj_player_fz modelname="f"
@@ -99,6 +100,7 @@
 		SS_walk_shoot1=asset_get_index(string_replace("spr_player_@_walk_shoot1","@",modelname))
 		SS_walk_shoot2=asset_get_index(string_replace("spr_player_@_walk_shoot2","@",modelname))
 		SS_dash_shoot=asset_get_index(string_replace("spr_player_@_dash_shoot","@",modelname))
+		SS_jump_shoot=asset_get_index(string_replace("spr_player_@_jump_shoot","@",modelname))
 		SS_fall_shoot=asset_get_index(string_replace("spr_player_@_fall_shoot","@",modelname))
 		SS_craw_shoot=asset_get_index(string_replace("spr_player_@_craw_shoot","@",modelname))
 		//SS_lad_shoot=asset_get_index(string_replace("spr_player_@_lad_shoot","@",modelname))
@@ -130,7 +132,8 @@
 	SE_dash=se_player_dash
 	SE_jump=se_player_jump
 	SE_crawjump=se_player_crawjump
-	SE_injure=se_player_injure
+	SE_injure1=se_player_injure1
+	SE_injure2=se_player_injure2
 	SE_death=se_player_death
 	SE_transon=se_player_transon
 #endregion

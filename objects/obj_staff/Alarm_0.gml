@@ -26,12 +26,12 @@ if player_death_re=1{
 		global.player_hp=global.player_hp_up
 		global.player_mp=global.player_mp_up
 		global.boss_hp=0
-		global.player_zx-=1
+		global.player_life-=1
 		var player_old,player_new,dep;
 		player_old=obj_player.id
 		dep=obj_player.depth
 		instance_destroy(obj_player)
-		player_new=instance_create_depth(global.re_x,global.re_y,dep,player[global.model][global.character])
+		player_new=instance_create_depth(global.re_x,global.re_y,dep,player[global.model])
 		with player_new{
 			image_xscale=global.re_xscale
 			scr_sprite_change(SS_idle,0,0.25)

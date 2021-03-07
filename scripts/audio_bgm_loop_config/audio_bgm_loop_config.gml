@@ -4,7 +4,7 @@ function audio_bgm_loop_config() {
 	global.bgm_loop_cfgmap = ds_map_create()
 	var map = global.bgm_loop_cfgmap
 #region 关卡曲目
-	
+	map[? bgm_stage1] = [28.83, 157.28]	//stage1
 #endregion
 #region 剧情曲目
 	

@@ -4,7 +4,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_player_attack",
+    "path": "objects/obj_player_attack/obj_player_attack.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -27,8 +30,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "player",
-    "path": "folders/Objects/player.yy",
+    "name": "bullet",
+    "path": "folders/Objects/player/bullet.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_player_bullet",

@@ -253,6 +253,7 @@ data_save_variable_global()
 #endregion
 #region 其他变量
 global.room_change=0
+global.room_change_rate=array_create(3,0)
 global.skip=0
 global.boss_war=0
 global.boss_hp=0
@@ -266,7 +267,7 @@ player_death_re=0//重生控制变量
 #region 发射区
 instance_create_depth(0, 0, -10000, obj_view)
 instance_create_depth(0, 0, -20000, obj_menu)
-global.player=instance_create_layer(x,y,"player",obj_player_hu)
+global.player=instance_create_layer(x,y,"player",obj_player_armor)
 #endregion
 #region 重生区
 global.re_x=obj_player.x

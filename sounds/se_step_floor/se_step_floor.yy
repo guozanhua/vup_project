@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "se_step_floor.wav",
-  "duration": 0.336973,
+  "duration": 0.305476,
   "parent": {
     "name": "steps",
     "path": "folders/Sounds/steps.yy",

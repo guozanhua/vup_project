@@ -50,10 +50,10 @@ draw_set_color(c_white)
 draw_set_alpha(1)
 //血条
 draw_sprite(spr_ui_grd_hp_iframe, 0, 81, 76)
-draw_sprite(spr_ui_grd_hp, 0, 83, 76)
+draw_sprite_ext(spr_ui_grd_hp, 0, 83, 76, global.player_hp/global.player_hp_up, 1, 0, c_white, 1)
 //能量条
 draw_sprite(spr_ui_grd_mp_iframe, 0, 89, 120)
-draw_sprite(spr_ui_grd_mp, 0, 92, 120)
+draw_sprite_ext(spr_ui_grd_mp, 0, 92, 120, global.player_mp/global.player_mp_up, 1, 0, c_white, 1)
 //腰带
 draw_sprite(spr_ui_grd_belt, 0, 256, 960)
 #endregion

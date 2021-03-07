@@ -10,8 +10,8 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "se_player_crawjump",
-  "duration": 0.0,
+  "soundFile": "se_player_crawjump.wav",
+  "duration": 0.376179,
   "parent": {
     "name": "player",
     "path": "folders/Sounds/player.yy",

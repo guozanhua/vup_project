@@ -10,8 +10,8 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "se_player_water",
-  "duration": 0.0,
+  "soundFile": "se_player_water.mp3",
+  "duration": 2.77398014,
   "parent": {
     "name": "player",
     "path": "folders/Sounds/player.yy",

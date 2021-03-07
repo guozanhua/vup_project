@@ -28,29 +28,29 @@ function audio_bgm_free(stream) {
 	global.__bgm_stream=noone
 }
 /// @desc 立刻进入切换
-/// @arg name
-function audio_bgm_change(name) {
+/// @arg bgm
+function audio_bgm_change(bgm) {
 	//刚开始播放
-	if global.__bgm_name=noone{
+	if global.__bgm_name==noone{
 		global.__bgm_change=1.5
 		global.__bgm_change_time=0
 	}
 	//有之前的音乐
 	else audio_bgm_stop()
-	global.__bgm_name=name
+	global.__bgm_name=bgm
 	global.music_now=global.__bgm_name
 }
 /// @desc 进入切换
-/// @arg name
-function audio_bgm_change_imm(name) {
+/// @arg bgm
+function audio_bgm_change_imm(bgm) {
 	//刚开始播放
-	if global.__bgm_name=noone{
+	if global.__bgm_name==noone{
 		global.__bgm_change=1.5
 		global.__bgm_change_time=0
 	}
 	//有之前的音乐
 	else audio_bgm_stop_imm()
-	global.__bgm_name=name
+	global.__bgm_name=bgm
 	global.music_now=global.__bgm_name
 }
 /// @desc 停止播放
@@ -144,14 +144,14 @@ function audio_bgm_inloop() {
 }
 /// @desc 各个音乐的循环参数，需要先执行audio_bgm_loop_config方法
 function audio_bgm_setting() {
-	var name=global.__bgm_name,
+	var bgm=global.__bgm_name,
 		map = global.bgm_loop_cfgmap,//循环配置表
 		bg=0,//循环开始时间
 		ed=audio_sound_length(global.__bgm_stream),
 		loop=true//是否循环
-	loop = !is_undefined(map[? name])
+	loop = !is_undefined(map[? bgm])
 	if loop{
-		var ary = map[? name]
+		var ary = map[? bgm]
 		if is_array(ary){
 			bg = ary[0]
 			ed = ary[1]

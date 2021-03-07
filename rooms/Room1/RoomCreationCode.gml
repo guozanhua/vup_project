@@ -1,0 +1,1 @@
+audio_bgm_change(bgm_stage1)

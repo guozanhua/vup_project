@@ -29,6 +29,6 @@ function scr_enmus(){
 	//形态
 	enum PLAYER_MODEL{
 		HU = 0,
-		
+		ARMOR = 1,
 	}
 }
