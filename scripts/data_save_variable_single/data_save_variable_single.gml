@@ -12,6 +12,7 @@ function data_save_variable_single(){
 	global.re_xscale=0
 	/////////////////////////
 	global.player_hp=32
+	global.player_hp_aft=global.player_hp	//受伤红血
 	global.player_hp_up=32
 	global.player_hp_ex=0	//一次性扩展血条
 	global.player_mp=32

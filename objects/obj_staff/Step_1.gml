@@ -54,6 +54,23 @@ global.hour=global.hour mod 100
 //global.player_hp_up=16+4*scr_item_hpup_count()
 //global.player_mp_up=16+4*scr_item_mpup_count()
 #endregion
+#region 玩家数值控制
+if global.player_hp>global.player_hp_up
+	global.player_hp=global.player_hp_up
+else if global.player_hp<0
+	global.player_hp=0
+	
+if global.player_hp_aft<global.player_hp
+	global.player_hp_aft=global.player_hp
+else if global.player_hp_aft>global.player_hp {
+	global.player_hp_aft-=1/5
+}
+
+if global.player_mp>global.player_mp_up
+	global.player_mp=global.player_mp_up
+else if global.player_mp<0
+	global.player_mp=0
+#endregion
 #region 游戏暂停
 switch(global.stop){
 	case 0.5:{

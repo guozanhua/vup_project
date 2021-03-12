@@ -11,8 +11,8 @@ view={
 	hport : 288,
 }
 ui={
-	width : 2048,
-	height : 1152,
+	width : 1024,
+	height : 576,
 	xport : 0,
 	yport : 0,
 	ports : [
@@ -46,7 +46,7 @@ view_set_yport(1, ui.yport)
 view_set_wport(1, ui.width)
 view_set_hport(1, ui.height)
 
-window_size=1
+window_size=0
 window_set_size(ui.ports[window_size].w, ui.ports[window_size].h)
 #endregion
 #region 小房间切分+镜头控制
@@ -120,4 +120,56 @@ black_light_insts_set[? obj_bullet]="lightrad"
 black_light_followed_insts_list=ds_list_create() //跟踪对象的id集合
 //跟踪玩家的光圈
 black_light_player=noone
+#endregion
+#region 绘制函数
+//血条
+draw_hp = function(hp, hplenmax) {
+	var hpw=sprite_get_width(spr_ui_grd_hp),
+		hph=sprite_get_height(spr_ui_grd_hp),
+		hplen=(hp/global.player_hp_up)*hplenmax,
+		hpsurf=surface_create(hplenmax, hph);
+	surface_set_target(hpsurf)
+	draw_clear_alpha(c_white, 0)
+	draw_sprite(spr_ui_grd_hp, 0, 0, 0)
+	draw_sprite_ext(spr_ui_grd_hp, 1, hpw, 0, hplenmax/hpw, 1, 0, c_white, 1)
+	gpu_set_blendmode_ext(bm_src_alpha, bm_zero)
+	draw_set_alpha(0)
+	draw_primitive_begin(pr_trianglestrip)
+	draw_vertex(hplenmax, 0)
+	draw_vertex(hplenmax, hph)
+	draw_vertex(hplen-hph, hph)
+	draw_vertex(hplen, 0)
+	draw_vertex(hplenmax, 0)
+	draw_primitive_end()
+	draw_set_alpha(1)
+	draw_set_color(c_white)
+	gpu_set_blendmode(bm_normal)
+	surface_reset_target()
+	return hpsurf
+}
+//能量条
+draw_mp = function(mp, mplenmax) {
+	var mpw=sprite_get_width(spr_ui_grd_mp),
+		mph=sprite_get_height(spr_ui_grd_mp),
+		mplen=(mp/global.player_mp_up)*mplenmax,
+		mpsurf=surface_create(mplenmax, mph);
+	surface_set_target(mpsurf)
+	draw_clear_alpha(c_white, 0)
+	draw_sprite(spr_ui_grd_mp, 0, 0, 0)
+	draw_sprite_ext(spr_ui_grd_mp, 1, mpw, 0, mplenmax/mpw, 1, 0, c_white, 1)
+	gpu_set_blendmode_ext(bm_src_alpha, bm_zero)
+	draw_set_alpha(0)
+	draw_primitive_begin(pr_trianglestrip)
+	draw_vertex(mplenmax, 0)
+	draw_vertex(mplenmax, mph)
+	draw_vertex(mplen-mph, mph)
+	draw_vertex(mplen, 0)
+	draw_vertex(mplenmax, 0)
+	draw_primitive_end()
+	draw_set_alpha(1)
+	draw_set_color(c_white)
+	gpu_set_blendmode(bm_normal)
+	surface_reset_target()
+	return mpsurf
+}
 #endregion
