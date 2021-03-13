@@ -502,7 +502,8 @@ if(obj_player.y>global.room_yb+24) {
 	else{
 		global.player_hp=0;
 		//scr_sound_play(SE_death);
-		obj_player.y=global.room_yb+24;
+		obj_player.y=global.room_yb+48;
+		death_cliff=true;
 	}
 }
 //刷新保护

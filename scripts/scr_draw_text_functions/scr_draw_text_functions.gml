@@ -3,8 +3,8 @@
 function scr_draw_get_font_sep(fontv) {
 	return floor(font_get_size(fontv)*1.35*1.4)
 }
-/// @scr_draw_text_ext(color,alpha,angle,font,left,top,txt,xx,yy,xscale,yscale,sep,width,Stroke)
-/// @arg color
+/// @scr_draw_text_ext(col,alpha,angle,font,left,top,txt,xx,yy,xscale,yscale,sep,width,Stroke)
+/// @arg col
 /// @arg alpha
 /// @arg angle
 /// @arg font
@@ -18,7 +18,8 @@ function scr_draw_get_font_sep(fontv) {
 /// @arg sep
 /// @arg width
 /// @arg c_Str[-1无]
-function scr_draw_text(color, alpha, angle, font, xcen, ycen, txt, xx,yy,xscale,yscale,sep,width,Stroke) {
+/// @arg strokew
+function scr_draw_text(col, alpha, angle, font, xcen, ycen, txt, xx,yy,xscale,yscale,sep,width,Stroke, strokew) {
 	var left, top
 	if		xcen==0		left=fa_left
 	else if xcen==0.5	left=fa_center
@@ -40,22 +41,21 @@ function scr_draw_text(color, alpha, angle, font, xcen, ycen, txt, xx,yy,xscale,
 
 	if(Stroke>=0){
 		draw_set_color(Stroke)
-		draw_text_ext_transformed(xx+1, yy+1, txt, sep, width, xscale, yscale, angle)
-		draw_text_ext_transformed(xx+1, yy-1, txt, sep, width, xscale, yscale, angle)
-		draw_text_ext_transformed(xx-1, yy+1, txt, sep, width, xscale, yscale, angle)
-		draw_text_ext_transformed(xx-1, yy-1, txt, sep, width, xscale, yscale, angle)
-		draw_text_ext_transformed(xx+1, yy, txt, sep, width, xscale, yscale, angle)
-		draw_text_ext_transformed(xx-1, yy, txt, sep, width, xscale, yscale, angle)
-		draw_text_ext_transformed(xx, yy+1, txt, sep, width, xscale, yscale, angle)
-		draw_text_ext_transformed(xx, yy-1, txt, sep, width, xscale, yscale, angle)
+		draw_text_ext_transformed(xx+strokew, yy+strokew, txt, sep, width, xscale, yscale, angle)
+		draw_text_ext_transformed(xx+strokew, yy-strokew, txt, sep, width, xscale, yscale, angle)
+		draw_text_ext_transformed(xx-strokew, yy+strokew, txt, sep, width, xscale, yscale, angle)
+		draw_text_ext_transformed(xx-strokew, yy-strokew, txt, sep, width, xscale, yscale, angle)
+		draw_text_ext_transformed(xx+strokew, yy, txt, sep, width, xscale, yscale, angle)
+		draw_text_ext_transformed(xx-strokew, yy, txt, sep, width, xscale, yscale, angle)
+		draw_text_ext_transformed(xx, yy+strokew, txt, sep, width, xscale, yscale, angle)
+		draw_text_ext_transformed(xx, yy-strokew, txt, sep, width, xscale, yscale, angle)
 	}
-	draw_set_color(color)
+	draw_set_color(col)
 	draw_text_ext_transformed(xx, yy, txt, sep, width, xscale, yscale, angle)
-	draw_set_color(c_white)
-	draw_set_alpha(1)
+	draw_set_color_alpha_init()
 }
 /// @desc 绘制含有颜色及按键的文本
-/// @arg color
+/// @arg col
 /// @arg alpha
 /// @arg angle
 /// @arg font
@@ -69,7 +69,8 @@ function scr_draw_text(color, alpha, angle, font, xcen, ycen, txt, xx,yy,xscale,
 /// @arg sep
 /// @arg width
 /// @arg c_Str[-1无]
-function scr_draw_text_ext(color, alpha, angle, font, xcen, ycen, txt, xx, yy, xscale,yscale,sep,width,stroke) {
+/// @arg strokew
+function scr_draw_text_ext(col, alpha, angle, font, xcen, ycen, txt, xx, yy, xscale,yscale,sep,width,stroke,strokew) {
 	/**
 	 * 绘制范例
 	 * draw_text_incolor(font_0,x,y,txt)
@@ -96,14 +97,14 @@ function scr_draw_text_ext(color, alpha, angle, font, xcen, ycen, txt, xx, yy, x
 
 	//有边框背景
 	//if(stroke!=-1){
-	//	scr_draw_text(stroke,alpha,angle,font,0,0,str_filter,xx,yy,xscale,yscale,sep,1000000,stroke);
+	//	scr_draw_text(stroke,alpha,angle,font,0,0,str_filter,xx,yy,xscale,yscale,sep,1000000,stroke,strokew);
 	//}
 
 	//设置临时计算参数
 	var _txt_x=0,//目前绘制横向偏移
 		_txt_y=0;//目前绘制纵向偏移
 
-	draw_set_color(color);//从边框色设置为默认色
+	draw_set_color(col);//从边框色设置为默认色
 	
 	//执行过滤
 	var filter_tags=[
@@ -130,7 +131,7 @@ function scr_draw_text_ext(color, alpha, angle, font, xcen, ycen, txt, xx, yy, x
 
 	//如果没有颜色标示符，直接绘制
 	if(!string_contain(txt, [TXT_COL_PERFIX, TXT_ICON_PERFIX])){
-		scr_draw_text(color,alpha,angle,font,0,0,txt,xx,yy,xscale,yscale,sep,1000000,stroke);
+		scr_draw_text(col,alpha,angle,font,0,0,txt,xx,yy,xscale,yscale,sep,1000000,stroke,strokew);
 		return;
 	}
 
@@ -208,7 +209,7 @@ function scr_draw_text_ext(color, alpha, angle, font, xcen, ycen, txt, xx, yy, x
 					if(stroke!=-1){
 						for(var isx=-1;isx<=1;isx++)
 							for(var isy=-1;isy<=1;isy++)
-								draw_sprite_ext(keyspr, keysprinx, xx+_txt_sx+isx, yy+_txt_sy+isy, xscale, yscale, angle, stroke, alpha)
+								draw_sprite_ext(keyspr, keysprinx, xx+_txt_sx+isx*strokew, yy+_txt_sy+isy*strokew, xscale, yscale, angle, stroke, alpha)
 					} 
 					draw_sprite_ext(keyspr, keysprinx, xx+_txt_sx, yy+_txt_sy, xscale, yscale, angle, draw_get_color(), draw_get_alpha())
 					_txt_x += keysprwidth+1
@@ -226,10 +227,9 @@ function scr_draw_text_ext(color, alpha, angle, font, xcen, ycen, txt, xx, yy, x
 						draw_set_alpha(alpha)
 						for(var isx=-1;isx<=1;isx++)
 							for(var isy=-1;isy<=1;isy++)
-								draw_text_ext_transformed(xx+_txt_sx+isx, yy+_txt_sy+isy, _txt_final_draw, sep, width, xscale, yscale, angle)
+								draw_text_ext_transformed(xx+_txt_sx+isx*strokew, yy+_txt_sy+isy*strokew, _txt_final_draw, sep, width, xscale, yscale, angle)
 					} 
-					draw_set_color(nowcol)
-					draw_set_alpha(nowaph)
+					draw_set_color_alpha(nowcol, nowaph)
 					draw_text_ext_transformed(xx+_txt_sx, yy+_txt_sy, _txt_final_draw, sep, width, xscale, yscale, angle)
 					_txt_x += string_width(_txt_final_draw);
 				}
@@ -256,11 +256,12 @@ function scr_draw_text_ext(color, alpha, angle, font, xcen, ycen, txt, xx, yy, x
 /// @arg x 绘制横坐标
 /// @arg y 绘制纵坐标
 /// @arg txt 绘制文本
-/// @arg color 绘制初始颜色
+/// @arg col 绘制初始颜色
 /// @arg alpha 绘制透明度
 /// @arg sep 行间距[-1无]
 /// @arg c_Str[-1无]
-function scr_draw_text_incolor(font, xx, yy, txt, color, alpha, sep, stroke) {
+/// @arg strokew
+function scr_draw_text_incolor(font, xx, yy, txt, col, alpha, sep, stroke, strokew) {
 	/**
 	 * 绘制范例
 	 * draw_text_incolor(font_0,x,y,txt)
@@ -280,14 +281,14 @@ function scr_draw_text_incolor(font, xx, yy, txt, color, alpha, sep, stroke) {
 	if(stroke!=-1){
 		//过滤颜色标识
 		var str_filter=string_filter(txt, "[$=%{?}%]");
-		scr_draw_text_ext(stroke,alpha,0,font,0,0,str_filter,xx-1,yy-1,1,1,sep,1000000,-1);
-		scr_draw_text_ext(stroke,alpha,0,font,0,0,str_filter,xx-1,yy,1,1,sep,1000000,-1);
-		scr_draw_text_ext(stroke,alpha,0,font,0,0,str_filter,xx-1,yy+1,1,1,sep,1000000,-1);
-		scr_draw_text_ext(stroke,alpha,0,font,0,0,str_filter,xx,yy-1,1,1,sep,1000000,-1);
-		scr_draw_text_ext(stroke,alpha,0,font,0,0,str_filter,xx,yy+1,1,1,sep,1000000,-1);
-		scr_draw_text_ext(stroke,alpha,0,font,0,0,str_filter,xx+1,yy-1,1,1,sep,1000000,-1);
-		scr_draw_text_ext(stroke,alpha,0,font,0,0,str_filter,xx+1,yy,1,1,sep,1000000,-1);
-		scr_draw_text_ext(stroke,alpha,0,font,0,0,str_filter,xx+1,yy+1,1,1,sep,1000000,-1);
+		scr_draw_text_ext(stroke,alpha,0,font,0,0,str_filter,xx-strokew,yy-strokew,1,1,sep,1000000,-1, 0);
+		scr_draw_text_ext(stroke,alpha,0,font,0,0,str_filter,xx-strokew,yy,1,1,sep,1000000,-1, 0);
+		scr_draw_text_ext(stroke,alpha,0,font,0,0,str_filter,xx-strokew,yy+strokew,1,1,sep,1000000,-1, 0);
+		scr_draw_text_ext(stroke,alpha,0,font,0,0,str_filter,xx,yy-strokew,1,1,sep,1000000,-1, 0);
+		scr_draw_text_ext(stroke,alpha,0,font,0,0,str_filter,xx,yy+strokew,1,1,sep,1000000,-1, 0);
+		scr_draw_text_ext(stroke,alpha,0,font,0,0,str_filter,xx+strokew,yy-strokew,1,1,sep,1000000,-1, 0);
+		scr_draw_text_ext(stroke,alpha,0,font,0,0,str_filter,xx+strokew,yy,strokew,1,sep,1000000,-1, 0);
+		scr_draw_text_ext(stroke,alpha,0,font,0,0,str_filter,xx+strokew,yy+strokew,1,1,sep,1000000,-1, 0);
 	}
 
 	//设置临时计算参数
@@ -295,11 +296,11 @@ function scr_draw_text_incolor(font, xx, yy, txt, color, alpha, sep, stroke) {
 	_txt_x=0,//目前绘制横向偏移
 	_txt_y=0;//目前绘制纵向偏移
 
-	draw_set_color(color);//从边框色设置为默认色
+	draw_set_color(col);//从边框色设置为默认色
 
 	//如果没有颜色标示符，直接绘制
 	if(string_pos("[$=", txt)<=0){
-		scr_draw_text_ext(color,alpha,0,font,0,0,txt,xx,yy,1,1,sep,1000000,stroke);
+		scr_draw_text_ext(col,alpha,0,font,0,0,txt,xx,yy,1,1,sep,1000000,stroke, strokew);
 		return;
 	}
 

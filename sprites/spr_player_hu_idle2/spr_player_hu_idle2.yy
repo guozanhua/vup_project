@@ -47,7 +47,7 @@
     "spriteId": {"name":"spr_player_hu_idle2","path":"sprites/spr_player_hu_idle2/spr_player_hu_idle2.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 15.0,
+    "playbackSpeed": 6.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,

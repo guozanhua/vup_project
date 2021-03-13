@@ -262,12 +262,16 @@ global.player_def=1//实际伤害百分比
 global.prick_attack=6//尖刺伤害
 global.player_reversed=0//上下倒立
 global.floor_down_list=ds_list_create()//玩家半透板记录
-player_death_re=0//重生控制变量
+player_death_action=0//重生控制变量
+player_death_time=0//重生控制变量
 #endregion
 #region 发射区
-instance_create_depth(0, 0, -10000, obj_view)
-instance_create_depth(0, 0, -20000, obj_menu)
+instance_create_depth(0, 0, 0, obj_view)
+instance_create_depth(0, 0, -10000, obj_menu)
 global.player=instance_create_layer(x,y,"player",obj_player_armor)
+with global.player {
+	scr_sprite_change(spr_none, 0, 0)
+}
 #endregion
 #region 重生区
 global.re_x=obj_player.x
@@ -310,3 +314,4 @@ global.music_now=noone
 global.music_change=0//音乐变更
 music_time=0//音乐更换计时
 #endregion
+event_perform(ev_other, ev_game_start)

@@ -33,9 +33,6 @@
     {"compositeImage":{"FrameId":{"name":"50ee63d1-e97b-484d-9d6b-2e9d587a1df1","path":"sprites/spr_player_armor_crawjump/spr_player_armor_crawjump.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"50ee63d1-e97b-484d-9d6b-2e9d587a1df1","path":"sprites/spr_player_armor_crawjump/spr_player_armor_crawjump.yy",},"LayerId":{"name":"67f079a6-f566-4fcd-97cc-a735fc8599ff","path":"sprites/spr_player_armor_crawjump/spr_player_armor_crawjump.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_player_armor_crawjump","path":"sprites/spr_player_armor_crawjump/spr_player_armor_crawjump.yy",},"resourceVersion":"1.0","name":"50ee63d1-e97b-484d-9d6b-2e9d587a1df1","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"84173c29-79c1-49ef-bd0e-e59b3078af80","path":"sprites/spr_player_armor_crawjump/spr_player_armor_crawjump.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"84173c29-79c1-49ef-bd0e-e59b3078af80","path":"sprites/spr_player_armor_crawjump/spr_player_armor_crawjump.yy",},"LayerId":{"name":"67f079a6-f566-4fcd-97cc-a735fc8599ff","path":"sprites/spr_player_armor_crawjump/spr_player_armor_crawjump.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_player_armor_crawjump","path":"sprites/spr_player_armor_crawjump/spr_player_armor_crawjump.yy",},"resourceVersion":"1.0","name":"84173c29-79c1-49ef-bd0e-e59b3078af80","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_player_armor_crawjump","path":"sprites/spr_player_armor_crawjump/spr_player_armor_crawjump.yy",},
@@ -45,7 +42,7 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 4.0,
+    "length": 3.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
@@ -53,7 +50,6 @@
             {"id":"468458fd-f7ee-4ea0-8fb1-4482492064a9","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"50aa96e7-11ab-4506-87d1-5f5a57f1aa03","path":"sprites/spr_player_armor_crawjump/spr_player_armor_crawjump.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"89c47857-f82c-421a-9e28-693e1ea791b9","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3ff246e3-409b-4d51-aac1-370a04990b67","path":"sprites/spr_player_armor_crawjump/spr_player_armor_crawjump.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"93692c21-b730-45d1-a20e-002b4f78a58c","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"50ee63d1-e97b-484d-9d6b-2e9d587a1df1","path":"sprites/spr_player_armor_crawjump/spr_player_armor_crawjump.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"622dbbc6-dc28-41d0-aec7-cdaebfb2bca8","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"84173c29-79c1-49ef-bd0e-e59b3078af80","path":"sprites/spr_player_armor_crawjump/spr_player_armor_crawjump.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,

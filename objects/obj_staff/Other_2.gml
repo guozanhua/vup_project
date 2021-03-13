@@ -1,7 +1,5 @@
 randomize()
 
-global.player_operate=1
-global.operate=1
 global.player_support=35
 global.player_hp_up=64
 global.player_hp=global.player_hp_up

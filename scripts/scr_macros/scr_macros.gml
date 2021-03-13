@@ -12,6 +12,8 @@ function scr_macro(){
 #region 屏幕标准尺寸
     #macro VIEW_W 512
     #macro VIEW_H 288
+    #macro VIEW_W_UI 2048
+    #macro VIEW_H_UI 1152
 #endregion
 #region 文件
 	#macro FILE_CONFIG "GameConfig.ini" //配置文件

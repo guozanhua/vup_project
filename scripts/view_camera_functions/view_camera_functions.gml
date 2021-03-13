@@ -6,7 +6,17 @@ function view_xpos(view) {
 /// @desc 获得相机y坐标
 /// @arg view
 function view_ypos(view) {
-	return camera_get_view_y(view_camera[view])
+	return  camera_get_view_y(view_camera[view])
+}
+/// @desc 获得相机x坐标
+/// @arg view
+function view_xcenpos(view) {
+	return view_xpos(view)+view_wpos(view)/2
+}
+/// @desc 获得相机y坐标
+/// @arg view
+function view_ycenpos(view) {
+	return view_ypos(view)+view_hpos(view)/2
 }
 /// @desc 获得相机宽度
 /// @arg view

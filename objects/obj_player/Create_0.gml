@@ -205,8 +205,9 @@ cliff_protect=false; //悬崖保护
 cliff_protect_time=0; //悬崖保护时间
 twining_time=0; //蛛网缠绕时间
 
-cyber_death_action=0; //电子空间免死保护动作
-cyber_death_time=0;
+death_action=0; //死亡动作
+death_time=0;
+death_cliff=false; //是否坠崖死亡
 
 //上一帧的精灵
 sprite_per=noone
@@ -236,6 +237,10 @@ airdashed=0; //冲刺次数限制
 //清空子弹信息
 clearBullets = function() {
 	
+}
+//判断是否能射出子弹
+canShootBullets = function() {
+	return true
 }
 //空中根据是否冲刺设置速度
 dashHspeed = function(dir) {

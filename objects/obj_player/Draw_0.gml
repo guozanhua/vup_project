@@ -25,7 +25,7 @@ event_user(15);
 #region 受伤
 if(uninjure==1) {
 	if(global.fps_20==0) 
-		scr_draw_sprite_white(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		scr_draw_sprite_white(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_aqua,image_alpha);
 }
 #endregion
 x=perx;

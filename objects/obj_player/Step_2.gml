@@ -12,10 +12,10 @@ if(scr_menu_trem()) {
 	//////////////////////////////////////
 	scr_sprite_imspd(SS_injure_fall,0,0.2);
 	//////////////////////////////////////
-	scr_sprite_imspd(SS_injure1,0.5,0,1);
+	scr_sprite_imspd(SS_injure1,0.25,0,1);
 	scr_sprite_imspd(SS_injure1,0.05,1,2);
 	//////////////////////////////////////
-	scr_sprite_imspd(SS_injure2,0.5,0,1);
+	scr_sprite_imspd(SS_injure2,0.25,0,1);
 	scr_sprite_imspd(SS_injure2,0.05,1,2);
 	//////////////////////////////////////
 	if(variable_instance_exists(id,"SS_injure3")) {
@@ -24,6 +24,13 @@ if(scr_menu_trem()) {
 	}
 	#endregion
 	#region 声控区
+	if(sprite_index==SS_idle2) {
+		//image_index=accurate_to(image_index, 0.1)
+		if between(image_index, 3, true, 3.1, false)
+			scr_sound_play(se_player_dying)
+	} else {
+		scr_sound_stop(se_player_dying)
+	}
 	if(jump==3) {
 		if((global.fps_10==0 && vsp==1.5)
 		||(global.fps_6==0 && vsp==1)
@@ -57,11 +64,10 @@ if(scr_menu_trem()) {
 		scr_player_flyobj_move();
 	#endregion
 	#region 死亡
-	if(global.player_hp<=0 
-	&& global.operate==1) {
-		scr_sprite_change(SS_death,0,1);
+	if global.player_hp<=0
+	&& global.operate==1{
+		scr_sprite_change(spr_none,0,0);
 		global.operate=0;
-		global.player_hp=0;
 		walk=0;
 		jump=0;
 		dash=0;
@@ -70,16 +76,21 @@ if(scr_menu_trem()) {
 		water=0;
 		injure_element=ELEMENTS.none;
 		injure_t=0;
-		for(var i=1;i<=2;i+=1){
-			charge[i]=0;
-			charge_index[i]=0;
-			charge_break[i]=0;
+		//清空各类记录
+		scr_player_charge_clear()
+		scr_player_floordown_clear(); 
+		//声音停止
+		audio_bgm_stop()
+		scr_sound_stopall_dpl()
+		audio_stop_all()
+		//创建玩家死亡动画
+		with instance_create_depth(x, y, 100, obj_player_death_anima) {
+			scr_sprite_change(other.SS_death, 0, 0)
+			image_xscale=other.image_xscale
+			cliff=other.death_cliff
+			if cliff image_angle=0
 		}
-		scr_sound_stop(SE_injure1);
-		scr_sound_stop(SE_injure2);
-		scr_sound_play(SE_death);
-		//清空半透板记录
-		scr_player_floordown_clear();
+		death_cliff=false;
 	}
 	#endregion
 }
@@ -320,11 +331,11 @@ global.player_def=1;
 		//普通受伤
 		else{
 			if(uninjure==1) {
-				scr_sprite_change(SS_injure1,1,0.25);
+				scr_sprite_change(SS_injure1,0,0.25);
 				scr_sound_play(SE_injure1);
 			}
 			else if(uninjure==-1) {
-				scr_sprite_change(SS_injure2,1,0.25);
+				scr_sprite_change(SS_injure2,0,0.25);
 				scr_sound_play(SE_injure2);
 			}
 			if(jump==9) scr_player_outground();

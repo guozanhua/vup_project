@@ -223,3 +223,12 @@ function sigma_var(n, pw) {
 }
 
 #endregion
+#region 数学运算
+/// @desc 精确到多少数
+/// @arg num
+/// @arg unit
+function accurate_to(num, unit) {
+	return floor(num/unit)*unit
+}
+
+#endregion

@@ -6,7 +6,7 @@ player_y=obj_player.y
 #endregion
 #region 镜头房间控制
 //镜头偏移
-if global.operate=1 && scr_menu_trem(){
+if global.operate==1 && scr_menu_trem(){
 	if(global.view_xcen_shift!=prev_view_xcen_shift){
 		global.room_change_xl=1
 		global.room_change_xr=1
@@ -26,7 +26,7 @@ if global.operate=1 && scr_menu_trem(){
 	prev_view_ycen_shift=global.view_ycen_shift
 }
 //房间变换
-if global.operate=1{
+if global.operate==1{
     if lastroom_xl>global.room_xl
         global.room_change_xl=1
     else if lastroom_xl<global.room_xl
@@ -47,12 +47,12 @@ if global.operate=1{
     else if lastroom_yb<global.room_yb
         global.room_change_yb=1
     
-	if view_ypos(0)+view_hpos(0)/2<=y
+	if view_ycenpos(0)<=y
 		global.room_change_yt=0
-	if view_ypos(0)+view_hpos(0)/2>=y
+	if view_ycenpos(0)>=y
 		global.room_change_yb=0
-	if view_xpos(0)+view_wpos(0)/2<=x+4
-	&& view_xpos(0)+view_wpos(0)/2>=x-4{
+	if view_xcenpos(0)<=x+4
+	&& view_xcenpos(0)>=x-4{
 		global.room_change_xl=0
 		global.room_change_xr=0
 	}

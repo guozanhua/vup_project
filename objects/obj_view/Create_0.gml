@@ -2,34 +2,26 @@
 //场景镜头
 view={
 	//显示尺寸
-	width : 512,
-	height : 288,
+	width : VIEW_W,
+	height : VIEW_H,
 	//实际尺寸
 	xport : 0,
 	yport : 0,
-	wport : 512,
-	hport : 288,
+	wport : VIEW_W,
+	hport : VIEW_H,
 }
 ui={
-	width : 1024,
-	height : 576,
+	width : VIEW_W_UI,
+	height : VIEW_H_UI,
 	xport : 0,
 	yport : 0,
 	ports : [
-		//{w:512, h:288},
-		{w:1024, h:576},
-		{w:1536, h:864},
-		{w:1920, h:1080},
+		//{w:VIEW_W_UI/4, h:VIEW_H_UI/4},
+		{w: VIEW_W_UI/4*2, h: VIEW_H_UI/4*2},
+		{w: VIEW_W_UI/4*3, h: VIEW_H_UI/4*3},
+		{w: 1920, h: 1080},
 	],
 }
-view_visible[0]=true
-camera_set_view_size(view_camera[0], view.width, view.height)
-camera_set_view_border(view_camera[0], view.width/2, view.height/2)
-camera_set_view_target(view_camera[0], self.id)
-view_set_xport(0, view.xport)
-view_set_yport(0, view.yport)
-view_set_wport(0, view.wport)
-view_set_hport(0, view.hport)
 view0_surface_temp=noone
 /*
 由于要采用场景UI分开的方式绘制，使用方案如下：
@@ -39,15 +31,7 @@ PreDraw时变更为1920x1080
 完成后，绘制UI
 PostDraw后变回512x288
 */
-view_visible[1]=true
-camera_set_view_size(view_camera[1], ui.width, ui.height)
-view_set_xport(1, ui.xport)
-view_set_yport(1, ui.yport)
-view_set_wport(1, ui.width)
-view_set_hport(1, ui.height)
-
 window_size=0
-window_set_size(ui.ports[window_size].w, ui.ports[window_size].h)
 #endregion
 #region 小房间切分+镜头控制
 global.room_xl=0
@@ -141,8 +125,7 @@ draw_hp = function(hp, hplenmax) {
 	draw_vertex(hplen, 0)
 	draw_vertex(hplenmax, 0)
 	draw_primitive_end()
-	draw_set_alpha(1)
-	draw_set_color(c_white)
+	draw_set_color_alpha_init()
 	gpu_set_blendmode(bm_normal)
 	surface_reset_target()
 	return hpsurf
@@ -166,10 +149,10 @@ draw_mp = function(mp, mplenmax) {
 	draw_vertex(mplen, 0)
 	draw_vertex(mplenmax, 0)
 	draw_primitive_end()
-	draw_set_alpha(1)
-	draw_set_color(c_white)
+	draw_set_color_alpha_init()
 	gpu_set_blendmode(bm_normal)
 	surface_reset_target()
 	return mpsurf
 }
 #endregion
+event_perform(ev_other, ev_room_start)

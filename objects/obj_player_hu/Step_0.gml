@@ -85,7 +85,8 @@ else if bullet_time==0{
 }
 #endregion
 #region 发动射击
-if scr_player_mainuse(0,0) {
+if scr_player_mainuse(0,0) 
+&&(scr_player_main_chargebreak(0)>0 || canShootBullets()) {
 	if jump==0{
 		if walk==0{
 			scr_sprite_change(SS_idle_shoot,0,0.25)

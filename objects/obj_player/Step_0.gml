@@ -176,13 +176,16 @@ for(var i=1;i<=2;i+=1){
 		#endregion
 		#region 站立待机
 		if(walk==0) {
+			var dyinghp=8
 		    //普通站立动作（仅与受伤站立切换）
 			if(sprite_index==SS_idle
-			&& global.player_hp<=3) 
+			&& global.player_hp<=dyinghp) {
+				image_index=round(image_index)
 				scr_sprite_change(SS_idle2,-2,-2);
+			}
 			//受伤站立动作（仅与普通站立切换）
 			else if(sprite_index==SS_idle2
-			&& global.player_hp>3) 
+			&& global.player_hp>dyinghp) 
 				scr_sprite_change(SS_idle,-2,-2);
 		    //左右走路
 			if(keystate_check(global.left_state) || keystate_check(global.right_state)) {

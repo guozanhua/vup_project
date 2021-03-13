@@ -1,31 +1,18 @@
 /// @desc 绘制矩形
-/// @arg color
+/// @arg col
 /// @arg alpha
 /// @arg x1
 /// @arg y1
 /// @arg x2
 /// @arg y2
 /// @arg outline
-function scr_draw_rectangle(color, alpha, x1, y1, x2, y2, outline) {
-	draw_set_alpha(alpha)
-	draw_set_color(color)
+function scr_draw_rectangle(col, alpha, x1, y1, x2, y2, outline) {
+	draw_set_color_alpha(col, alpha)
 	draw_rectangle(x1,y1,x2,y2,outline)
-	draw_set_alpha(1)
-	draw_set_color(c_white)
-}
-/// @desc 绘制镜头矩形
-/// @arg color
-/// @arg alpha
-/// @arg view
-function scr_draw_rectangle_view(color, alpha, view) {
-	draw_set_alpha(alpha)
-	draw_set_color(color)
-	draw_rectangle(view_xpos(view)+view_wpos(view)*2,view_ypos(view)+view_hpos(view)*2,view_xpos(view)-view_wpos(view),view_ypos(view)-view_hpos(view),false)
-	draw_set_alpha(1)
-	draw_set_color(c_white)
+	draw_set_color_alpha_init()
 }
 /// @desc 绘制三角形
-/// @arg color
+/// @arg col
 /// @arg alpha
 /// @arg x1
 /// @arg y1
@@ -33,15 +20,26 @@ function scr_draw_rectangle_view(color, alpha, view) {
 /// @arg y2
 /// @arg x3
 /// @arg y3
-function scr_draw_triangle(color,alpha,x1,y1,x2,y2,x3,y3) {
-	draw_set_alpha(alpha)
-	draw_set_color(color)
+function scr_draw_triangle(col,alpha,x1,y1,x2,y2,x3,y3) {
+	draw_set_color_alpha(col, alpha)
 	draw_triangle(x1,y1,x2,y2,x3,y3,false)
-	draw_set_alpha(1)
-	draw_set_color(c_white)
+	draw_set_color_alpha_init()
+}
+/// @desc 绘制镜头矩形
+/// @arg col
+/// @arg alpha
+/// @arg view
+function scr_draw_rectangle_view(col, alpha, view) {
+	draw_set_color_alpha(col, alpha)
+	draw_rectangle(view_xpos(view)+view_wpos(view)*2,
+						view_ypos(view)+view_hpos(view)*2,
+						view_xpos(view)-view_wpos(view),
+						view_ypos(view)-view_hpos(view),
+						false)
+	draw_set_color_alpha_init()
 }
 /// @desc 绘制线条
-/// @arg color
+/// @arg col
 /// @arg alpha
 /// @arg width
 /// @arg tophave
@@ -49,49 +47,43 @@ function scr_draw_triangle(color,alpha,x1,y1,x2,y2,x3,y3) {
 /// @arg y1
 /// @arg x2
 /// @arg y2
-function scr_draw_line(color,alpha,w,top,x1,y1,x2,y2) {
+function scr_draw_line(col,alpha,w,top,x1,y1,x2,y2) {
 	var dir;
 	dir=degtorad(point_direction(x1,y1,x2,y2))
-	draw_set_alpha(alpha)
-	draw_set_color(color)
+	draw_set_color_alpha(col, alpha)
 	//draw_line_width(x1-w/2,y1-w/2,x2-w/2,y2-w/2,w)
 	if top=true
 		draw_line_width(x1-(w/2)*cos(dir),y1+(w/2)*sin(dir),x2+(w/2)*cos(dir),y2-(w/2)*sin(dir),w)
 	else
 		draw_line_width(x1,y1,x2,y2,w)
-	draw_set_alpha(1)
-	draw_set_color(c_white)
+	draw_set_color_alpha_init()
 }
 /// @desc 绘制带圆头线条
-/// @arg color
+/// @arg col
 /// @arg alpha
 /// @arg width
 /// @arg x1
 /// @arg y1
 /// @arg x2
 /// @arg y2
-function scr_draw_linecircle(color,alpha,w,x1,y1,x2,y2) {
-	draw_set_alpha(alpha)
-	draw_set_color(color)
+function scr_draw_linecircle(col,alpha,w,x1,y1,x2,y2) {
+	draw_set_color_alpha(col, alpha)
 	draw_line_width(x1,y1,x2,y2,w)
 	draw_circle(x1,y1,w/2,false)
 	draw_circle(x2,y2,w/2,false)
-	draw_set_alpha(1)
-	draw_set_color(c_white)
+	draw_set_color_alpha_init()
 }
 /// @desc 绘制圆形
-/// @arg color
+/// @arg col
 /// @arg alpha
 /// @arg rad
 /// @arg x
 /// @arg y
 /// @arg outline
-function scr_draw_circle(color,alpha,w,xx,yy,outline) {
-	draw_set_alpha(alpha)
-	draw_set_color(color)
+function scr_draw_circle(col,alpha,w,xx,yy,outline) {
+	draw_set_color_alpha(col, alpha)
 	draw_circle(xx,yy,w,outline)
-	draw_set_alpha(1)
-	draw_set_color(c_white)
+	draw_set_color_alpha_init()
 }
 /// @desc 绘制扇形/圆环
 /// @arg col

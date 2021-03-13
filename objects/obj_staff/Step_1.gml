@@ -70,6 +70,11 @@ if global.player_mp>global.player_mp_up
 	global.player_mp=global.player_mp_up
 else if global.player_mp<0
 	global.player_mp=0
+	
+if global.player_life<0 
+	global.player_life=0
+else if global.player_life>9 
+	global.player_life=9
 #endregion
 #region 游戏暂停
 switch(global.stop){

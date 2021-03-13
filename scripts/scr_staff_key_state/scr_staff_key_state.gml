@@ -146,8 +146,8 @@ function scr_staff_key_state() {
 #endregion
 #region 玩家动作
 #region 自由操作
-	if global.operate=1
-	&& global.player_operate=1{
+	if global.operate==1
+	&& global.player_operate==1{
 		global.left_state = scr_allkey_state(global.left_allstate)
 		global.right_state = scr_allkey_state(global.right_allstate)
 		global.up_state = scr_allkey_state(global.up_allstate)
@@ -199,9 +199,9 @@ function scr_staff_key_state() {
 	}
 #endregion
 #region 按键判定延长
-	if global.operate=1{
+	if global.operate==1{
 	#region 脚本操纵
-		if global.player_operate=0{
+		if global.player_operate==0{
 			if keystate_check_pressed(global.jump_state) global.jump_cor=1
 			else if keystate_check_direct(global.jump_state) global.jump_cor=5
 			else if !keystate_check(global.jump_state) global.jump_cor=0
@@ -212,8 +212,8 @@ function scr_staff_key_state() {
 		}
 	#endregion
 	#region 玩家操纵
-		else if global.operate=1
-		&& global.player_operate=1{
+		else if global.operate==1
+		&& global.player_operate==1{
 			//跳键
 			if !keystate_check(global.jump_state)
 				global.jump_cor=0

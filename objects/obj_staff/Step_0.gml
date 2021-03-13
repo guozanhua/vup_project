@@ -1,28 +1,15 @@
 #region 玩家死亡
 //非BOSS战且非电子空间内
-if global.boss_war==0 {
-	if player_death_re<1{
-		if global.player_hp<=0
-		|| player_death_re=0.5{
-			player_death_re=1
-			if global.player_life<=0{
-				alarm[0]=240
-				//instance_create_depth(view_xpos(0)+view_wpos(0)/2,view_ypos(0)+view_hpos(0)/2,
-									//obj_view.depth,obj_gameover_sign)
-			}
-			else{
-				alarm[0]=180
-			}
-			audio_bgm_stop()
-		}
+//if global.boss_war==0 {
+	if player_death_action==1{
+		player_death_action=2
+		alarm[0]=60
 	}
-	else if player_death_re=1{
-		if alarm[0]=60
-			scr_view_transition(1,0)
-		if scr_view_transition_Isover(1)
-			scr_view_transition(1,2)
-	}
-}
+	//else if player_death_action=2 {
+	//	if scr_view_transition_Isover(1)
+	//		scr_view_transition(1, 2)
+	//}
+//}
 #endregion
 #region 音量设置
 //音效音量
@@ -87,5 +74,11 @@ else if global.skip==2{
 #region 部分缓存循环检测
 {
 	
+}
+#endregion
+
+#region debug测试
+if keyboard_check_pressed(vk_delete) {
+	global.player_hp=0
 }
 #endregion

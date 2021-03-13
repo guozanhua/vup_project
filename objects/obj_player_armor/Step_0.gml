@@ -51,28 +51,30 @@ else if bullet_time==0{
 }
 #endregion
 #region 发动射击
-if scr_player_mainuse(0,0) {
+if scr_player_mainuse(0,0)
+&&(scr_player_main_chargebreak(0)>0 || canShootBullets()) {
 	if jump=0{
 		if walk==0{
 			scr_sprite_change(SS_idle_shoot,0,0.25)
-			scr_player_re_shoot(shoot_x[0],shoot_y[0])
+			scr_player_armor_shoot(shoot_x[0],shoot_y[0])
 		}
 		else if walk==1{
 			scr_sprite_change(SS_walk_shoot,-2,0.25)
-			scr_player_re_shoot(shoot_x[1],shoot_y[1])
+			scr_player_armor_shoot(shoot_x[1],shoot_y[1])
 		}
 		else if walk==2{
-			scr_sprite_change(SS_dash_shoot,-2,0.25)
-			scr_player_re_shoot(shoot_x[3],shoot_y[3])
+			scr_sprite_change(SS_dash_shoot,0,0.25)
+			scr_player_armor_shoot(shoot_x[3],shoot_y[3])
 		}
 	}
-	else if jump==1 || jump==23{
+	else if jump==1 || jump==23 || jump==4{
 		scr_sprite_change(SS_jump_shoot,0,0.25)
-		scr_player_re_shoot(shoot_x[2],shoot_y[2])
+		scr_player_armor_shoot(shoot_x[2],shoot_y[2])
+		//if jump==4 jump=1
 	}
 	else if jump==2{
 		scr_sprite_change(SS_fall_shoot,0,0.25)
-		scr_player_re_shoot(shoot_x[2],shoot_y[2])
+		scr_player_armor_shoot(shoot_x[2],shoot_y[2])
 	}
 }
 #endregion
