@@ -13,7 +13,7 @@ if(afterdash<8 && global.fps_30!=0) {
 			}
 			//保持普通
 			//else if(bow_exchange) scr_shader_color_exchange(ex_cols,bow_colors);
-			draw_sprite_ext(sprite_index,image_index,round(px[i]),round(py[i]),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+			draw_sprite_ext(sprite_index,image_index,round(px[i]),round(py[i]),image_xscale,image_yscale,image_angle,aftercolor,image_alpha);
 			//shader_reset();
 		}
 	}
@@ -24,8 +24,8 @@ event_user(15);
 #endregion
 #region 受伤
 if(uninjure==1) {
-	if(global.fps_20==0) 
-		scr_draw_sprite_white(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_aqua,image_alpha);
+	var alpha=global.fps_15*0.25
+	scr_draw_sprite_white(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,image_alpha*alpha);
 }
 #endregion
 x=perx;

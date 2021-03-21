@@ -31,4 +31,12 @@ function scr_enmus(){
 		HU = 0,
 		ARMOR = 1,
 	}
+	// 菜单每一页
+	enum MENU {
+		STATUS = 0,
+		ITEM = 1,
+		OPTION = 2,
+		MISSION = 3,
+		SKILL = 4,
+	}
 }

@@ -75,7 +75,7 @@ if(!cliff) {
 	else if action==8 {
 		if image_index>=17 {
 			with instance_create_depth(x, y, depth-1, obj_animation_once) {
-				scr_sprite_change(spr_player_death_boom, 0, 0.5)
+				scr_sprite_change(spr_player_death_boom, 0, 0.25)
 			}
 			scr_sound_play(obj_player.SE_death)
 			scr_sound_play(se_player_death_boom)

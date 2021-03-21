@@ -14,8 +14,8 @@ view_visible[1]=true
 camera_set_view_size(view_camera[1], ui.width, ui.height)
 view_set_xport(1, ui.xport)
 view_set_yport(1, ui.yport)
-view_set_wport(1, ui.width)
-view_set_hport(1, ui.height)
+view_set_wport(1, ui.wport)
+view_set_hport(1, ui.hport)
 
 global.room_xl=0
 global.room_xr=room_width

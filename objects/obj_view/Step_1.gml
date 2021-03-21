@@ -6,7 +6,8 @@ player_y=obj_player.y
 #endregion
 #region 镜头房间控制
 //镜头偏移
-if global.operate==1 && scr_menu_trem(){
+if(global.operate==1 && scr_menu_trem())
+|| obj_player.death_cliff {
 	if(global.view_xcen_shift!=prev_view_xcen_shift){
 		global.room_change_xl=1
 		global.room_change_xr=1

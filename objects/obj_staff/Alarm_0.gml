@@ -1,5 +1,6 @@
 /// @desc 玩家死亡
 if player_death_action=2{
+	obj_player.death_cliff=false;
 	audio_se_stop_all()
 	scr_sound_stopall_dpl()
 	//命归零

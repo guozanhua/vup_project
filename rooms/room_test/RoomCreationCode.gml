@@ -7,3 +7,4 @@ with obj_player {
 audio_bgm_change(bgm_stage1)
 global.operate=0.5
 global.player_operate=1
+global.model=PLAYER_MODEL.ARMOR

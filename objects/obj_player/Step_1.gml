@@ -148,13 +148,10 @@ if(jump!=0) {
 	&& jump!=28//悬挂荡漾中
 	&& !(jump==-1 && injure_ingrd))//受伤且在地面上
 	{
-		//if(injure_element!=ELEMENTS.pushdown) {
-		//	if(vsp<vspmaxrate*grav*sign(grav)) 
-		//		vsp+=grav;
-		//	else
-		//		vsp=vspmaxrate*grav;
-		//} else
-			vsp+=grav;
+		if(vsp<vspmaxrate*grav*sign(grav)) 
+				vsp+=grav;
+			else
+				vsp=vspmaxrate*grav;
 	}
 	#endregion
 }

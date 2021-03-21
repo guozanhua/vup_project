@@ -197,22 +197,34 @@ function scr_view_freedom(posxy, hcon, vcon) {
 		            if global.player_reversed=0{
 		                if view_ypos(0)<objy-144{
 		                    if view_ypos(0)<objy-288
-		                        view_addy(11+global.player_dy)
-		                    if view_ypos(0)<objy-272
-		                        view_addy(10)
-		                    if view_ypos(0)<objy-256
-		                        view_addy(9)
+		                        view_addy(16+global.player_dy)
+		                    else if view_ypos(0)<objy-272
+		                        view_addy(16)
+		                    else if view_ypos(0)<objy-256
+		                        view_addy(15)
+		                    else if view_ypos(0)<objy-248
+		                        view_addy(14)
 		                    else if view_ypos(0)<objy-240
-		                        view_addy(8)
+		                        view_addy(13)
+		                    else if view_ypos(0)<objy-232
+		                        view_addy(12)
 		                    else if view_ypos(0)<objy-224
-		                        view_addy(7)
+		                        view_addy(11)
 		                    else if view_ypos(0)<objy-208
-		                        view_addy(6)
+		                        view_addy(10)
+		                    else if view_ypos(0)<objy-200
+		                        view_addy(9)
 		                    else if view_ypos(0)<objy-192
-		                        view_addy(5)
+		                        view_addy(8)
+		                    else if view_ypos(0)<objy-184
+		                        view_addy(7)
 		                    else if view_ypos(0)<objy-176
-		                        view_addy(4)
+		                        view_addy(6)
+		                    else if view_ypos(0)<objy-168
+		                        view_addy(5)
 		                    else if view_ypos(0)<objy-160
+		                        view_addy(4)
+		                    else if view_ypos(0)<objy-156
 		                        view_addy(3)
 		                    else if view_ypos(0)<objy-152
 		                        view_addy(2)
@@ -247,20 +259,32 @@ function scr_view_freedom(posxy, hcon, vcon) {
 		            else if global.player_reversed=1{
 		                if view_ypos(0)>objy-144{
 		                    if view_ypos(0)>objy
-		                        view_addy(-11+global.player_dy)
+		                        view_addy(-16+global.player_dy)
 		                    else if view_ypos(0)>objy-4
-		                        view_addy(-10)
+		                        view_addy(-16)
 		                    else if view_ypos(0)>objy-8
-		                        view_addy(-9)
+		                        view_addy(-15)
+		                    else if view_ypos(0)>objy-12
+		                        view_addy(-14)
 		                    else if view_ypos(0)>objy-16
-		                        view_addy(-8)
+		                        view_addy(-13)
+		                    else if view_ypos(0)>objy-24
+		                        view_addy(-12)
 		                    else if view_ypos(0)>objy-32
-		                        view_addy(-7)
+		                        view_addy(-11)
+		                    else if view_ypos(0)>objy-40
+		                        view_addy(-10)
 		                    else if view_ypos(0)>objy-48
-		                        view_addy(-6)
+		                        view_addy(-9)
+		                    else if view_ypos(0)>objy-56
+		                        view_addy(-8)
 		                    else if view_ypos(0)>objy-64
-		                        view_addy(-5)
+		                        view_addy(-7)
+		                    else if view_ypos(0)>objy-72
+		                        view_addy(-6)
 		                    else if view_ypos(0)>objy-80
+		                        view_addy(-5)
+		                    else if view_ypos(0)>objy-88
 		                        view_addy(-4)
 		                    else if view_ypos(0)>objy-96
 		                        view_addy(-3)
@@ -299,22 +323,34 @@ function scr_view_freedom(posxy, hcon, vcon) {
 			#region 小房间上方半个真空期
 		        else if /*objy>global.room_yt && */objy<=global.room_yt+view_hpos(0)/2{
 		            if view_ypos(0)>global.room_yt+144
-		                view_addy(-11)
+		                view_addy(-17)
 		            else if view_ypos(0)>global.room_yt+128
-		                view_addy(-10)
+		                view_addy(-16)
 		            else if view_ypos(0)>global.room_yt+112
-		                view_addy(-9)
+		                view_addy(-15)
 		            else if view_ypos(0)>global.room_yt+96
-		                view_addy(-8)
+		                view_addy(-14)
+		            else if view_ypos(0)>global.room_yt+88
+		                view_addy(-13)
 		            else if view_ypos(0)>global.room_yt+80
-		                view_addy(-7)
+		                view_addy(-12)
+		            else if view_ypos(0)>global.room_yt+72
+		                view_addy(-11)
 		            else if view_ypos(0)>global.room_yt+64
-		                view_addy(-6)
+		                view_addy(-10)
+		            else if view_ypos(0)>global.room_yt+56
+		                view_addy(-9)
 		            else if view_ypos(0)>global.room_yt+48
-		                view_addy(-5)
+		                view_addy(-8)
+		            else if view_ypos(0)>global.room_yt+40
+		                view_addy(-7)
 		            else if view_ypos(0)>global.room_yt+32
-		                view_addy(-4)
+		                view_addy(-6)
+		            else if view_ypos(0)>global.room_yt+24
+		                view_addy(-5)
 		            else if view_ypos(0)>global.room_yt+16
+		                view_addy(-4)
+		            else if view_ypos(0)>global.room_yt+12
 		                view_addy(-3)
 		            else if view_ypos(0)>global.room_yt+8
 		                view_addy(-2)
@@ -325,22 +361,34 @@ function scr_view_freedom(posxy, hcon, vcon) {
 			#region 小房间下方半个真空期
 		        else if objy>=global.room_yb-view_hpos(0)/2/* && objy<global.room_yb*/{
 		            if view_ypos(0)<global.room_yb-view_hpos(0)-144
-		                view_addy(11)
+		                view_addy(17)
 		            else if view_ypos(0)<global.room_yb-view_hpos(0)-128
-		                view_addy(10)
+		                view_addy(16)
 		            else if view_ypos(0)<global.room_yb-view_hpos(0)-112
-		                view_addy(9)
+		                view_addy(15)
 		            else if view_ypos(0)<global.room_yb-view_hpos(0)-96
-		                view_addy(8)
+		                view_addy(14)
+		            else if view_ypos(0)<global.room_yb-view_hpos(0)-88
+		                view_addy(13)
 		            else if view_ypos(0)<global.room_yb-view_hpos(0)-80
-		                view_addy(7)
+		                view_addy(12)
+		            else if view_ypos(0)<global.room_yb-view_hpos(0)-72
+		                view_addy(11)
 		            else if view_ypos(0)<global.room_yb-view_hpos(0)-64
-		                view_addy(6)
+		                view_addy(10)
+		            else if view_ypos(0)<global.room_yb-view_hpos(0)-56
+		                view_addy(9)
 		            else if view_ypos(0)<global.room_yb-view_hpos(0)-48
-		                view_addy(5)
+		                view_addy(8)
+		            else if view_ypos(0)<global.room_yb-view_hpos(0)-40
+		                view_addy(7)
 		            else if view_ypos(0)<global.room_yb-view_hpos(0)-32
-		                view_addy(4)
+		                view_addy(6)
+		            else if view_ypos(0)<global.room_yb-view_hpos(0)-24
+		                view_addy(5)
 		            else if view_ypos(0)<global.room_yb-view_hpos(0)-16
+		                view_addy(4)
+		            else if view_ypos(0)<global.room_yb-view_hpos(0)-12
 		                view_addy(3)
 		            else if view_ypos(0)<global.room_yb-view_hpos(0)-8
 		                view_addy(2)
@@ -352,22 +400,34 @@ function scr_view_freedom(posxy, hcon, vcon) {
 		        if objy>=global.room_yt && objy<=global.room_yb{
 		            if view_ypos(0)<global.room_yt{
 		                if view_ypos(0)<global.room_yt-144
-		                    view_addy(11)
+		                    view_addy(17)
 		                else if view_ypos(0)<global.room_yt-128
-		                    view_addy(10)
+		                    view_addy(16)
 		                else if view_ypos(0)<global.room_yt-112
-		                    view_addy(9)
+		                    view_addy(15)
 		                else if view_ypos(0)<global.room_yt-96
-		                    view_addy(8)
+		                    view_addy(14)
+		                else if view_ypos(0)<global.room_yt-88
+		                    view_addy(13)
 		                else if view_ypos(0)<global.room_yt-80
-		                    view_addy(7)
+		                    view_addy(12)
+		                else if view_ypos(0)<global.room_yt-72
+		                    view_addy(11)
 		                else if view_ypos(0)<global.room_yt-64
-		                    view_addy(6)
+		                    view_addy(10)
+		                else if view_ypos(0)<global.room_yt-56
+		                    view_addy(9)
 		                else if view_ypos(0)<global.room_yt-48
-		                    view_addy(5)
+		                    view_addy(8)
+		                else if view_ypos(0)<global.room_yt-40
+		                    view_addy(7)
 		                else if view_ypos(0)<global.room_yt-32
-		                    view_addy(4)
+		                    view_addy(6)
+		                else if view_ypos(0)<global.room_yt-24
+		                    view_addy(5)
 		                else if view_ypos(0)<global.room_yt-16
+		                    view_addy(4)
+		                else if view_ypos(0)<global.room_yt-12
 		                    view_addy(3)
 		                else if view_ypos(0)<global.room_yt-8
 		                    view_addy(2)
@@ -376,22 +436,34 @@ function scr_view_freedom(posxy, hcon, vcon) {
 		            }
 		            else if view_ypos(0)>global.room_yb-view_hpos(0){
 		                if view_ypos(0)>global.room_yb-view_hpos(0)+144
-		                    view_addy(-11)
+		                    view_addy(-17)
 		                else if view_ypos(0)>global.room_yb-view_hpos(0)+128
-		                    view_addy(-10)
+		                    view_addy(-16)
 		                else if view_ypos(0)>global.room_yb-view_hpos(0)+112
-		                    view_addy(-9)
+		                    view_addy(-15)
 		                else if view_ypos(0)>global.room_yb-view_hpos(0)+96
-		                    view_addy(-8)
+		                    view_addy(-14)
+		                else if view_ypos(0)>global.room_yb-view_hpos(0)+88
+		                    view_addy(-13)
 		                else if view_ypos(0)>global.room_yb-view_hpos(0)+80
-		                    view_addy(-7)
+		                    view_addy(-12)
+		                else if view_ypos(0)>global.room_yb-view_hpos(0)+72
+		                    view_addy(-11)
 		                else if view_ypos(0)>global.room_yb-view_hpos(0)+64
-		                    view_addy(-6)
+		                    view_addy(-10)
+		                else if view_ypos(0)>global.room_yb-view_hpos(0)+56
+		                    view_addy(-9)
 		                else if view_ypos(0)>global.room_yb-view_hpos(0)+48
-		                    view_addy(-5)
+		                    view_addy(-8)
+		                else if view_ypos(0)>global.room_yb-view_hpos(0)+40
+		                    view_addy(-7)
 		                else if view_ypos(0)>global.room_yb-view_hpos(0)+32
-		                    view_addy(-4)
+		                    view_addy(-6)
+		                else if view_ypos(0)>global.room_yb-view_hpos(0)+24
+		                    view_addy(-5)
 		                else if view_ypos(0)>global.room_yb-view_hpos(0)+16
+		                    view_addy(-4)
+		                else if view_ypos(0)>global.room_yb-view_hpos(0)+12
 		                    view_addy(-3)
 		                else if view_ypos(0)>global.room_yb-view_hpos(0)+8
 		                    view_addy(-2)

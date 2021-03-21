@@ -90,7 +90,22 @@ if(scr_menu_trem()) {
 			cliff=other.death_cliff
 			if cliff image_angle=0
 		}
-		death_cliff=false;
+	}
+	#endregion
+	#region 检测model是否符合当前卡片
+	var newplayer = noone;
+	if model==0 && global.model!=0 {
+		newplayer=obj_player_armor
+	} else if model!=0 && global.model==0 {
+		newplayer=obj_player_hu
+	}
+	if(newplayer!=noone) {
+		with instance_create_depth(x, y, depth, newplayer) {
+			scr_sprite_change(SS_idle, 0, 0.25)
+			image_xscale=other.image_xscale
+			image_yscale=other.image_yscale
+		}
+		instance_destroy()
 	}
 	#endregion
 }

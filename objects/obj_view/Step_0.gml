@@ -1,1 +1,1 @@
-window_set_size(ui.ports[window_size].w, ui.ports[window_size].h)
+window_set_size(ui.winsize[window_size].w, ui.winsize[window_size].h)

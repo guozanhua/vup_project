@@ -268,7 +268,9 @@ player_death_time=0//重生控制变量
 #region 发射区
 instance_create_depth(0, 0, 0, obj_view)
 instance_create_depth(0, 0, -10000, obj_menu)
-global.player=instance_create_layer(x,y,"player",obj_player_armor)
+player[PLAYER_MODEL.HU]=obj_player_hu
+player[PLAYER_MODEL.ARMOR]=obj_player_armor
+global.player=instance_create_layer(x,y,"player",player[PLAYER_MODEL.HU])
 with global.player {
 	scr_sprite_change(spr_none, 0, 0)
 }
@@ -313,5 +315,8 @@ global.music_last=0//上一个音乐
 global.music_now=noone
 global.music_change=0//音乐变更
 music_time=0//音乐更换计时
+#endregion
+#region 文本区
+scr_txt()
 #endregion
 event_perform(ev_other, ev_game_start)

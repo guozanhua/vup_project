@@ -9,7 +9,7 @@
 	G_noliq=GRAV; //非水下重力
 	G_liq=GRAV/2; //水下重力
 	G=G_noliq;
-	vspmaxrate=20; //下落最大速度是G的多少倍
+	vspmaxrate=24; //下落最大速度是G的多少倍
 	A_up=0;
 	H=1;
 	V=1;
@@ -167,7 +167,6 @@ dash_order_time_V=0;
 dash_order_alarm=15;
 dash_boost_inst=noone; //冲刺环
 w_j=0;
-afterdash=8;
 jump_dash=0;
 jump_craw=0;
 l_dash=0;
@@ -225,10 +224,12 @@ charge_index[2]=0;
 #endregion
 #region 残影
 //残影位置
+afterdash=8;
 for(var i=8;i>=0;i-=1){
 	px[i]=x;
 	py[i]=y;
 }
+aftercolor=$5328cc
 #endregion
 #region 部分需要通用的变量
 airdashed=0; //冲刺次数限制

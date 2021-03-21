@@ -8,9 +8,8 @@ draw_sprite(spr_logo_bgs, 0, cenx, ceny)
 draw_sprite(spr_logo_title, 0, logox, logoy)
 
 //shader_set(shd_blur_gauss)
-var fstep = shader_get_uniform(shd_vague, "fstep");
-shader_set_uniform_f(fstep, 0.00024)
-//scr_draw_rectangle(c_black, 1, cenx-512, ceny+256-96, cenx+512, ceny+256+96, false)
+//var fstep = shader_get_uniform(shd_vague, "fstep");
+//shader_set_uniform_f(fstep, 0.00024)
 scr_draw_text_ext(c_black, 1, 0, font_puhui, 0.5, 0.5, "请按下ENTER键", 
 					cenx, ceny+256, 1, 1, -1, -1, -1, 0)
-shader_reset()
+//shader_reset()

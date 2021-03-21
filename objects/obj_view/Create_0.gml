@@ -15,11 +15,12 @@ ui={
 	height : VIEW_H_UI,
 	xport : 0,
 	yport : 0,
-	ports : [
-		//{w:VIEW_W_UI/4, h:VIEW_H_UI/4},
-		{w: VIEW_W_UI/4*2, h: VIEW_H_UI/4*2},
-		{w: VIEW_W_UI/4*3, h: VIEW_H_UI/4*3},
-		{w: 1920, h: 1080},
+	wport : VIEW_W_UI,
+	hport : VIEW_H_UI,
+	winsize : [
+		{w: VIEW_W*2, h: VIEW_H*2},
+		{w: VIEW_W*3, h: VIEW_H*3},
+		{w: VIEW_W_UI, h: VIEW_H_UI},
 	],
 }
 view0_surface_temp=noone

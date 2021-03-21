@@ -19,10 +19,10 @@ canShootBullets = function() {
 }
 //站立
 shoot_x[0]=29
-shoot_y[0]=-17
+shoot_y[0]=-16
 //走路
 shoot_x[1]=30
-shoot_y[1]=-18
+shoot_y[1]=-16
 //空中
 shoot_x[2]=34
 shoot_y[2]=-19

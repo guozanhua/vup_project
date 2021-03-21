@@ -21,10 +21,10 @@ canShootBullets = function() {
 	return bullet_number<3
 }
 shoot_x[0]=29
-shoot_y[0]=-17
+shoot_y[0]=-16
 
 shoot_x[1]=30
-shoot_y[1]=-18
+shoot_y[1]=-16
 
 shoot_x[2]=34
 shoot_y[2]=-19

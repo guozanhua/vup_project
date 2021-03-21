@@ -1,6 +1,5 @@
 if view_current!=1 exit
 #region 使用镜头0内容覆盖app
-surface_resize(application_surface, ui.width, ui.height)
 if surface_exists(view0_surface_temp) {
 	var apsw = surface_get_width(application_surface), 
 		apsh = surface_get_height(application_surface), 
@@ -87,7 +86,19 @@ if global.operate==1
 	////能量条
 	//draw_sprite(spr_ui_grd_mp_iframe, 0, 89, 120)
 	//draw_sprite_ext(spr_ui_grd_mp, 0, 92, 120, global.player_mp/global.player_mp_up, 1, 0, c_white, 1)
-	//腰带
-	draw_sprite(spr_ui_grd_belt, 0, 256, 960)
+	
+	#region 腰带
+	with obj_menu {
+		var bx=256, by=960
+		//纹路底
+		draw_sprite(spr_ui_grd_cards_in, 0, bx, by)
+		//插入的卡片
+		draw_sprite(spr_ui_grd_cards, global.model, bx, by-128*card_outsert_rate)
+		//当前状态
+		draw_sprite(spr_ui_grd_cards_in, global.model, bx, by)
+		//腰带变身器
+		draw_sprite(spr_ui_grd_belt, 0, bx, by)
+	}
+	#endregion
 }
 #endregion
